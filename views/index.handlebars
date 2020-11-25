@@ -1,34 +1,45 @@
-<h1>Eat Burgers!</h1>
+<div class="container">
+  <h1 class="display1 text-center text-white bg-primary p-5">Eat Burgers!</h1>
 
-<h2>Menu</h2>
-<ul>
-    {{#each burgers}}
-      {{#unless devoured}}
-        <li>
-	        {{burger_name}}
-            <button class="devour" data-id="{{id}}">Devour This Burger!</button>
-        </li>
-      {{/unless}}
-    {{/each}}
-</ul>
+  <img src="/assets/img/burger.png" class="img-fluid mx-auto d-block" alt="smiling burger illustration">
 
-<h2>Eaten</h2>
-<ul>
-    {{#each burgers}}
-      {{#if devoured}}
-        <li>
-	        {{burger_name}}
-        </li>
-      {{/if}}
-    {{/each}}
-</ul>
+  <div class="row">
+    {{!-- Menu Column --}}
+    <div class="col-6">
+      <h2 class="text-white bg-warning p-3 mb-2 mt-2">Menu</h2>
+      <ul>
+          {{#each burgers}}
+            {{#unless devoured}}
+              <li>
+                {{burger_name}}
+                  <button class="devour" data-id="{{id}}">Devour This Burger!</button>
+              </li>
+            {{/unless}}
+          {{/each}}
+      </ul>
+    </div>
 
-<h2>Add a Burger to the Menu</h2>
-<form class="create-form">
-  <div class="form-group">
-    <label for="burger">Burger Name:</label>
-    <input type="text" id="burger" name="name">
+    {{!-- Eaten Column --}}
+    <div class="col-6">
+      <h2 class="text-white bg-warning p-3 mb-2 mt-2">Eaten</h2>
+      <ul>
+          {{#each burgers}}
+            {{#if devoured}}
+              <li>
+                {{burger_name}}
+              </li>
+            {{/if}}
+          {{/each}}
+      </ul>
+    </div>
   </div>
 
-  <button type="submit">Add Burger</button>
-</form>
+  <h4 class="text-white text-center bg-info p-2 mb-1"><i>Add a Burger to the Menu</i></h4>
+  <form class="create-form">
+    <div class="form-group row justify-content-center">
+      <input type="text" class="col-sm-8 m-1" id="burger" name="name" placeholder="Burger name...">
+      <button type="submit" class="btn btn-success col-sm-3 m-1">Add Burger</button>
+    </div>
+
+  </form>
+</div>
