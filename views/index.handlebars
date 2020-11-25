@@ -3,43 +3,62 @@
 
   <img src="/assets/img/burger.png" class="img-fluid mx-auto d-block" alt="smiling burger illustration">
 
+  <hr>
+
+  <div class="row">
+    <div class="col">
+      <h5 class="text-white text-center bg-info p-2 mb-1"><i>Order a Burger</i></h5>
+      <form class="create">
+        <div class="form-group row justify-content-center">
+          <input type="text" class="col-sm-8 m-1" id="burger" placeholder="Burger name...">
+          <button type="submit" class="btn btn-info col-sm-3 m-1">Place Order</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <hr>
+
   <div class="row">
     {{!-- Menu Column --}}
     <div class="col-6">
-      <h2 class="text-white bg-warning p-3 mb-2 mt-2">Menu</h2>
+      <h2 class="text-white text-center bg-warning p-3 mb-2 mt-2">On the Table</h2>
       <ul>
           {{#each burgers}}
             {{#unless devoured}}
               <li>
                 {{burger_name}}
-                  <button class="devour" data-id="{{id}}">Devour This Burger!</button>
+                  <button class="devour btn btn-sm btn-warning mb-1" data-id="{{id}}">EAT!</button>
               </li>
             {{/unless}}
           {{/each}}
+
+          <li>
+            <p class="text-info"><i>Order more burgers above...</i></p>
+          </li>
       </ul>
     </div>
 
     {{!-- Eaten Column --}}
     <div class="col-6">
-      <h2 class="text-white bg-warning p-3 mb-2 mt-2">Eaten</h2>
+      <h2 class="text-white text-center bg-secondary p-3 mb-2 mt-2">Eaten</h2>
       <ul>
           {{#each burgers}}
             {{#if devoured}}
               <li>
                 {{burger_name}}
+                <button class="delete btn btn-sm btn-secondary mb-1" data-id="{{id}}">x</button>
               </li>
             {{/if}}
           {{/each}}
+
+          <li>
+            <p class="text-warning"><i>Eat more burgers off the menu...</i></p>
+          </li>
       </ul>
     </div>
   </div>
 
-  <h4 class="text-white text-center bg-info p-2 mb-1"><i>Add a Burger to the Menu</i></h4>
-  <form class="create-form">
-    <div class="form-group row justify-content-center">
-      <input type="text" class="col-sm-8 m-1" id="burger" name="name" placeholder="Burger name...">
-      <button type="submit" class="btn btn-success col-sm-3 m-1">Add Burger</button>
-    </div>
+  <hr>
 
-  </form>
 </div>

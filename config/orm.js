@@ -4,7 +4,7 @@ function objToSql(object) {
   const keyArray = [];
 
   for (let key in object) {
-    const value = object[key];
+    let value = object[key];
     if (Object.hasOwnProperty.call(object, key)) {
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
@@ -14,6 +14,16 @@ function objToSql(object) {
   }
 
   return keyArray.toString();
+}
+
+function printQuestionMarks(num) {
+  var arr = [];
+
+  for (var i = 0; i < num; i++) {
+      arr.push("?");
+  }
+
+  return arr.toString();
 }
 
 const orm = {
@@ -30,10 +40,8 @@ const orm = {
     query += " (";
     query += columns.toString();
     query += ") ";
-    query += "VALUES (?";
-    for (let i = 1; i < values.length; i++) {
-      query += ",?"
-    }
+    query += "VALUES (";
+    query += printQuestionMarks(values.length);
     query += ") ";
 
     console.log(query);
@@ -54,6 +62,20 @@ const orm = {
     query += condition;
 
     console.log(query);
+
+    connection.query(query, function(err, result) {
+      if (err) throw err;
+      cb(result);
+    });
+  }, 
+  deleteOne: function(table, condition, cb) {
+    let query = "DELETE FROM " + table;
+
+    query += " WHERE ";
+    query += condition;
+
+    console.log(query);
+    
     connection.query(query, function(err, result) {
       if (err) throw err;
       cb(result);
