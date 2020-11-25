@@ -1,0 +1,25 @@
+{
+  "name": "burger-app",
+  "version": "1.0.0",
+  "description": "Simple web application that uses MySQL, Node, Express, and Handlebars to add burgers to a table, then eat them",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dandandanoneil/node-express-handlebars.git"
+  },
+  "author": "dandandanoneil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dandandanoneil/node-express-handlebars/issues"
+  },
+  "homepage": "https://github.com/dandandanoneil/node-express-handlebars#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mysql": "^2.18.1",
+    "dotenv": "^8.2.0"
+  }
+}
