@@ -3,8 +3,8 @@ Simple web application that uses MySQL, Node, Express, and Handlebars to add bur
 
 ## Table of Contents
 - [Installation Steps](#installation)
-- [Usage Instructions](#usage-instructions)
-- [Screen Recording](#screen-recording)
+- [Deployed Heroku Application](#deployed-heroku-application)
+- [Screenshot](#screenshot)
 - [Licenses](#licenses)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -13,10 +13,11 @@ Simple web application that uses MySQL, Node, Express, and Handlebars to add bur
 ## Installation 
 Node must be installed, as well as the Express, Handlebars and mySQL packages.
 
-## Usage Instructions
+## Deployed Heroku Application
+[Deployed Heroku Application](https://nameless-headland-46156.herokuapp.com/)
 
-## Screen Recording
-![Demo Screen Recording](./public/assets/img/demo-x4.gif)
+## Screenshot
+![Screenshot](./public/assets/img/screenshot.png)
 
 ## Licenses
 ### MIT License
